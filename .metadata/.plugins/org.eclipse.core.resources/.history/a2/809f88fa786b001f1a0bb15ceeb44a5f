@@ -1,0 +1,23 @@
+
+public class Vetor {
+	private double x, y;
+	
+	public Vetor(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	private Vetor() {
+		
+	}
+	
+	public Vetor clone() {
+		return this;
+	}
+	
+	public String toString() {
+		String str = "x: %.2f\ny: %.2f";
+		String result = String.format(str, x, y);
+		return result;
+	}
+}

@@ -1,0 +1,53 @@
+package lista;
+
+public class Lista {
+	private int tam = 0;
+	private No ini = null;
+	private No fin = null;
+	private No corr = null;
+	
+	public boolean vazio() {
+		if ((ini == null) || (fin == null))
+			return true;
+		return false;
+	}
+	
+	public void insIni(Object x) {
+		No novo_no = new No(x, ini);
+		ini = novo_no;
+		tam++;
+	}
+	
+	public void insFin(Object x) {
+		No novo_no = new No(x, null);
+		fin.setProx(novo_no);
+		tam++;
+	}
+	
+	public Object retIni() {
+		No aux = ini;
+		ini = aux.getProx();
+		tam--;
+		return aux;
+	}
+	
+	public Object retFin() {
+		No aux = ini, ant = null;
+		while (ini.getProx() != null) {
+			ant = aux;
+			aux = aux.getProx();
+		}
+		ant.setProx(null);
+		return aux;
+	}
+	
+	public void posIni() {
+		corr = ini;
+	}
+	
+	public Object prox() {
+		No aux = corr;
+		corr.setProx(aux.getProx());
+		return aux;
+	}
+}

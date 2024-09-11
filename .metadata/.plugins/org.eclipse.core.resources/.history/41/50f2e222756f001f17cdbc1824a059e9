@@ -1,0 +1,16 @@
+
+public class Socio {
+	private String nome;
+	private String endereco;
+	private String dtNasc;
+	private int matric;
+
+	public Socio(int x) {
+		matric = x;
+	}
+	
+	public String getMatric() {
+		int formatado = matric % 10;
+		return Integer.toBinaryString(formatado);
+	}
+}

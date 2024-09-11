@@ -1,0 +1,9 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Voo v=new Voo(10,4);
+
+	}
+
+}
